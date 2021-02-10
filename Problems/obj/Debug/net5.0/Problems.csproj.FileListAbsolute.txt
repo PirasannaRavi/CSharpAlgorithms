@@ -1,0 +1,12 @@
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/bin/Debug/net5.0/Problems.deps.json
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/bin/Debug/net5.0/Problems.dll
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/bin/Debug/net5.0/ref/Problems.dll
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/bin/Debug/net5.0/Problems.pdb
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.csprojAssemblyReference.cache
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.AssemblyInfoInputs.cache
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.AssemblyInfo.cs
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.csproj.CoreCompileInputs.cache
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.dll
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/ref/Problems.dll
+/Users/Alligator/Projects/CSharpAlgorithms/Problems/obj/Debug/net5.0/Problems.pdb
