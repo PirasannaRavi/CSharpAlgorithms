@@ -10,52 +10,42 @@ namespace Problems
     // C# IEnumerator interface reference:
     // https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator?view=netframework-4.8
 
-    class PeekingIterator
+    public class PeekingIterator
     {
         private readonly IEnumerator<int> _iterator;
-        private bool _hasPeeked;
         private bool _hasNext;
-        private int? _peekedElement;
+        private int _previousElement;
 
         // iterators refers to the first element of the array.
         public PeekingIterator(IEnumerator<int> iterator)
         {
             this._iterator = iterator;
-            // initialize any member here.
+            this._previousElement = _iterator.Current;
+            this._hasNext = this._iterator.MoveNext();
         }
 
         // Returns the next element in the iteration without advancing the iterator.
         public int Peek()
         {
-            if (!_hasPeeked)
-            {
-                _hasNext = _iterator.MoveNext();
-                _peekedElement = _iterator.Current;
-                _hasPeeked = true;
-            }
-
-            return _peekedElement ?? 0;
+            return _iterator.Current;
         }
 
         // Returns the next element in the iteration and advances the iterator.
         public int Next()
         {
-            if (!_hasPeeked)
-            {
-                _iterator.MoveNext();
-                return _iterator.Current;
-            }
-
-            int result = _peekedElement ?? 0;
-            _peekedElement = null;
-            _hasPeeked = false;
-            return result;
+            this._previousElement = _iterator.Current;
+            this._hasNext = this._iterator.MoveNext();
+            return _previousElement;
         }
 
         // Returns false if the iterator is refering to the end of the array of true otherwise.
         public bool HasNext()
         {
             return _hasNext;
+        }
+        public int Current()
+        {
+            return _previousElement;
         }
     }
 }
