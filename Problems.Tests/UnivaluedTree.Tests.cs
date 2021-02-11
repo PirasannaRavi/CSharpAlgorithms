@@ -15,7 +15,7 @@ namespace Problems.Tests
             TreeNode treeNode = new TreeNode(2, new TreeNode(2, new TreeNode(2), new TreeNode(5)), new TreeNode(2));
 
             var actual = univaluedTree.IsUnivalTree(treeNode);
-            var expected = true;
+            var expected = false;
 
             Assert.That(actual, Is.EqualTo(expected));
         }
