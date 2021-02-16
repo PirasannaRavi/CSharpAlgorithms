@@ -31,5 +31,45 @@ namespace Problems
             }
             return true;
         }
+
+        public bool TryPalindromeByRemovingOneChar(string s)
+        {
+            // Note: The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
+            var i = 0;
+            var j = s.Length - 1;
+            while (i < j)
+            {
+                if (s[i] != s[j])
+                {
+                    if (IsPalindrome(s, i + 1, j))
+                    {
+                        return true;
+                    }
+                    else if (IsPalindrome(s, i, j - 1))
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                i++;
+                j--;
+            }
+            return true;
+        }
+
+        private bool IsPalindrome(string s, int start, int end)
+        {
+            while (start < end)
+            {
+                if (s[start] != s[end])
+                {
+
+                    return false;
+                }
+                start++;
+                end--;
+            }
+            return true;
+        }
     }
 }

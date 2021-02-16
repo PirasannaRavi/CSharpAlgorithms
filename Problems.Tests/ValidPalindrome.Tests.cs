@@ -20,5 +20,17 @@ namespace Problems.Tests
 
             Assert.That(actual, Is.EqualTo(expected));
         }
+
+        [Test]
+        [TestCase("aba", true)]
+        [TestCase("abca", true)]
+        public void TryValidPalindromeTest(string s, bool expected)
+        {
+            var validPalindrome = new ValidPalindrome();
+
+            var actual = validPalindrome.TryPalindromeByRemovingOneChar(s);
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
     }
 }
