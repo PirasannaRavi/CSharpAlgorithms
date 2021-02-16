@@ -8,30 +8,32 @@ namespace Problems
     {
         public IList<string> GetLetterCasePermutation(string S)
         {
+            // BFS - Using Queue
             S = S.ToLower();
-            var combiStrings = new List<string>();
-            combiStrings.Add(S);
+            var combiStrings = new Queue<string>();
+            combiStrings.Enqueue(S);
 
-            var givenChars = S.ToCharArray();
-            for (var i = 0; i < givenChars.Length; i++)
+            for (var i = 0; i < S.Length; i++)
             {
-                if (givenChars[i] >= '0' && givenChars[i] <= '9')
+                if (Char.IsDigit(S[i]))
                 {
                     continue;
                 }
 
-                var newCombiStrings = new List<string>();
-                for (var j = 0; j < combiStrings.Count; j++)
+                var size = combiStrings.Count;
+                for (var j = 0; j < size; j++)
                 {
-                    var newString = new char[givenChars.Length];
-                    Array.Copy(combiStrings[j].ToCharArray(), newString, givenChars.Length);
+                    var cur = combiStrings.Dequeue();
+                    combiStrings.Enqueue(cur);
+
+                    var newString = new char[S.Length];
+                    Array.Copy(cur.ToCharArray(), newString, S.Length);
                     newString[i] = Char.ToUpper(newString[i]);
-                    newCombiStrings.Add(new string(newString));
+                    combiStrings.Enqueue(new string(newString));
                 }
-                combiStrings.AddRange(newCombiStrings);
             }
 
-            return combiStrings;
+            return combiStrings.ToList();
         }
     }
 }
