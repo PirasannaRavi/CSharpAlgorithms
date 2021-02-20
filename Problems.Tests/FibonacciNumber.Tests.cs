@@ -13,8 +13,8 @@ namespace Problems.Tests
         {
             var fibonacciNumber = new FibonacciNumber();
 
-            var actual = fibonacciNumber.Fib(100);
-            var expected = 3736710778780434371;
+            var actual = fibonacciNumber.Fib(5);
+            var expected = 5;
 
             Assert.That(actual, Is.EqualTo(expected));
         }
