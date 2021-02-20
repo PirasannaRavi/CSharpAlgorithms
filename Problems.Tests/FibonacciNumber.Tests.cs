@@ -9,12 +9,34 @@ namespace Problems.Tests
     {
 
         [Test]
-        public void FibonacciNumberTest()
+        public void FibonacciNumberTest1()
         {
             var fibonacciNumber = new FibonacciNumber();
 
-            var actual = fibonacciNumber.Fib(4);
-            var expected = 3;
+            var actual = fibonacciNumber.Fib(100);
+            var expected = 3736710778780434371;
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FibonacciNumberTest2()
+        {
+            var fibonacciNumber = new FibonacciNumber();
+
+            var actual = fibonacciNumber.FibMemo(100);
+            var expected = 3736710778780434371;
+
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FibonacciNumberTest3()
+        {
+            var fibonacciNumber = new FibonacciNumber();
+
+            var actual = fibonacciNumber.FibBottomUp(100);
+            var expected = 3736710778780434371;
 
             Assert.That(actual, Is.EqualTo(expected));
         }
