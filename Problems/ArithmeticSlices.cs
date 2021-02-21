@@ -57,21 +57,7 @@ namespace Problems
 
         public int NumberOfSubsequenceArithmeticSlices(int[] A)
         {
-            var count = 0;
-            var result = 0;
-            for (int i = 2; i < A.Length; i++)
-            {
-                if (A[i] - A[i - 1] == A[i - 1] - A[i - 2])
-                {
-                    count++;
-                    result += count;
-                }
-                else
-                {
-                    count = 0;
-                }
-            }
-            return result;
+            throw new NotImplementedException();
         }
     }
 }
